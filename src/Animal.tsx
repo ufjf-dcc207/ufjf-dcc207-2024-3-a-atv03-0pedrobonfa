@@ -4,7 +4,7 @@ interface AnimalProps{
     icone:string;
     nome:string;
     peso:number;
-    extincao:boolean;
+    extincao?:boolean;
 };
 
 export default function Animal({icone, nome, peso, extincao}:AnimalProps){
