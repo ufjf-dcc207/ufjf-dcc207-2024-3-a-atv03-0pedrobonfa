@@ -1,11 +1,11 @@
-
 import './App.css'
+import Animal from './Animal'
 function App() {
 
   return (
     <>
       <div className='app'>
-        Olá Mundo!
+        <Animal icone='🦁' nome='Leão' peso={190.37} extincao={true}/>
       </div>
     </>
   )
