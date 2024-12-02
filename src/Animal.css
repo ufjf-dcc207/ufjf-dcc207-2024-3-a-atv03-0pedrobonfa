@@ -3,23 +3,37 @@
     box-shadow: 0.1em 0.1em 0.2em;
     padding: 0.5em;
     border-radius: 0.5em;
+    display: grid;
+
+    grid-template-areas: 
+    "icone nome nome"
+    "icone peso peso"
+    "icone . extincao";
+
+    .icone{
+        font-size: 4em;
+        grid-area: icone;
+    
+    }
+    
+    .nome{
+        font-weight: 600;
+        grid-area: nome;
+    }
+    
+    .peso{
+        opacity: 0.6;
+        grid-area: peso;
+    }
+    
+    .extincao{
+        background-color: darkred;
+        color: white;
+        min-height: 1em;
+        grid-area: extincao;
+    }
 }
 
-.animal .icone{
-    font-size: 4em;
-
-}
-
-.animal .nome{
-    font-weight: 600;
-}
-
-.animal .peso{
-    opacity: 0.6;
-}
-
-.animal .extincao{
-    background-color: darkred;
-    color: white;
-    min-height: 1em;
+.animal{
+    place-items: center;
 }
