@@ -1,11 +1,10 @@
 import { ReactNode } from "react";
 import "./Exibicao.css";
-import Animal from "./Animal";
 interface ExibicaoProps {
     abertura: Date;
     fechamento: Date;
     cercado: string;
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 export default function Exibicao({ abertura:inicio, fechamento:fim, cercado:local, children: animais,}: ExibicaoProps) {

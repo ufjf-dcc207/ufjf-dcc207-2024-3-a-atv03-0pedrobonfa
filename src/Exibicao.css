@@ -3,15 +3,26 @@
     font-weight: 900;
     padding: 1em;
     display: grid;
-    grid-template-areas: "local inicio fim";
-    
+    grid-template-areas: 
+    "local inicio fim"
+    "animais animais animais";
+
     .inicio{
         color:darkgreen;
+        grid-area: inicio;
     }
     .fim{
         color:darkred;
+        grid-area: fim;
     }
     .local{
         text-decoration: underline;
+        grid-area: local;
+    }
+
+    .animais{
+        grid-area: animais;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
