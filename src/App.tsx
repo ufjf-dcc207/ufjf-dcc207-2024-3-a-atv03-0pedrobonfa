@@ -15,22 +15,18 @@ const ANIMAIS:AnimaisTuplaType[] = [
 
 function App() {
     const exA1:ReactNode[] = [];
-    const exB2:ReactNode[] = [];
-
-    for(let i = 0; i < ANIMAIS.length; i++){
-      const ex = ANIMAIS[i][2] < 200.00 ? exA1 : exB2;
-
-      ex.push(
-      <Animal 
-        key={ANIMAIS[i][1]}
-        icone={ANIMAIS[i][0]}
-        nome={ANIMAIS[i][1]}
-        peso={ANIMAIS[i][2]}
-        extincao={ANIMAIS[i][3]}
+    const exB2:ReactNode[] = ANIMAIS.map(function(animal){
+      return <Animal 
+        key={animal[1]}
+        icone={animal[0]}
+        nome={animal[1]}
+        peso={animal[2]}
+        extincao={animal[3]}
       
       />
-    );
-    }
+    });
+
+  
 
   return ( 
     <div className='app'>
@@ -39,11 +35,15 @@ function App() {
       abertura={new Date("2024-12-06T08:00:00.000-03:00")} 
       fechamento={new Date("2024-12-06T16:00:00.000-03:00")}
       cercado='A1'
-      >{exA1}</Exibicao>
+      >{exA1}
+      
+      </Exibicao>
 
       <Exibicao abertura={new Date("2024-12-06T08:00:00.000-03:00")} fechamento={new Date("2024-12-06T16:00:00.000-03:00")}
       cercado='B2'
-      >{exB2}</Exibicao>
+      >{exB2}
+      
+      </Exibicao>
     </div>
     
   )
