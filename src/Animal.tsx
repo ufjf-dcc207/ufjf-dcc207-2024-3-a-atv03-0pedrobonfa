@@ -8,7 +8,7 @@ interface AnimalProps{
 };
 
 export default function Animal({icone, nome, peso, extincao}:AnimalProps){
-
+    
     return (<div className="animal">
         <div className="icone">{icone}</div>
         <div className="nome">{nome}</div>
