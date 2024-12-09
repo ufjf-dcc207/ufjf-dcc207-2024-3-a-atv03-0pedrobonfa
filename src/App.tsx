@@ -2,18 +2,51 @@ import './App.css'
 import Animal from './Animal'
 import Exibicao from "./Exibicao";
 import { ReactNode } from 'react';
+type AnimaisTuplaType = [string, string, number, boolean];
+
+const ANIMAIS:AnimaisTuplaType[] = [
+  
+  ["🦁", "Leão" ,190.37, true],
+  ["🦒", "Girafa", 190.37, true],
+  ["🦜", "Papagaio", 0.12, false],
+  ["🦓", "Zebra" ,200, true],
+
+];
+
 function App() {
+    const exA1:ReactNode[] = [];
+    const exB2:ReactNode[] = [];
 
-  const exA1:ReactNode[] =[
+    for(let i =0; i<ANIMAIS.length; i++){
 
-    <Animal icone='🦁' nome='Leão' peso={190.37} extincao={true}/>,
-    <Animal icone='🦒' nome='Girafa' peso={1200} extincao={true}/>
-  ];
-  const exB1:ReactNode[]=[
+      //if(ANIMAIS[i][2]<200.00){
+      //exA1.push(<Animal
+        // icone={ANIMAIS[i][0]}
+        // nome={ANIMAIS[i][1]}
+        // peso={ANIMAIS[i][2]}
+        // extincao={ANIMAIS[i][3]}
+        ///>
+        // else{
+        //   exB2.push(<Animal
+            // icone={ANIMAIS[i][0]}
+            // nome={ANIMAIS[i][1]}
+            // peso={ANIMAIS[i][2]}
+            // extincao={ANIMAIS[i][3]}
+            // />
+        //}
 
-    <Animal icone='🦓' nome='Zebra' peso={200} extincao={true}/>,
-    <Animal icone='🦜' nome='Papagaio' peso={0.12}/>
-  ];
+      //);
+    //}
+      const ex = ANIMAIS[i][2]<200.00?exA1 : exB2;
+      ex.push(<Animal 
+        icone={ANIMAIS[i][0]}
+        nome={ANIMAIS[i][1]}
+        peso={ANIMAIS[i][2]}
+        extincao={ANIMAIS[i][3]}
+      
+      />
+    );
+    }
 
   return ( 
     <div className='app'>
@@ -25,7 +58,7 @@ function App() {
 
       <Exibicao abertura={new Date("2024-12-06T08:00:00.000-03:00")} fechamento={new Date("2024-12-06T16:00:00.000-03:00")}
       cercado='B1'
-      >{exB1}</Exibicao>
+      >{exB2}</Exibicao>
     </div>
     
   )
